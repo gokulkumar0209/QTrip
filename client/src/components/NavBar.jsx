@@ -2,7 +2,7 @@ import React from "react";
 
 function NavBar() {
 	return (
-		<div className=" text-white flex justify-between ml-6">
+		<div className=" text-white flex justify-between ml-6 bg-black">
 			<div>Suttri</div>
 			<div className="flex justify-between space-x-4 mr-6">
 				<div>Home</div>
