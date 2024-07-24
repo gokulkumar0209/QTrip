@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Cities from "./Cities";
 
 function Home() {
 	const picture2 =
@@ -32,6 +33,7 @@ function Home() {
 					</div>
 				</div>
 			</div>
+			<Cities />
 		</div>
 	);
 }
