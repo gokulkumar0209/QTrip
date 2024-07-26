@@ -1,16 +1,25 @@
 import { useState } from "react";
+import { Route, Router, BrowserRouter, Routes } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
+import Adventures from "./components/Adventures";
 
 function App() {
-	const [count, setCount] = useState(0);
+	const key = "city";
+	const value = "bengaluru";
+	localStorage.setItem(key, value);
 
 	return (
 		<>
-			<div className="">
-				<NavBar />
-				<Home />
-			</div>
+			<BrowserRouter>
+				<div className=" bg-gray-200">
+					<NavBar />
+					<Routes>
+						<Route path="/" element={<Home />}></Route>
+						<Route path="/adventures" element={<Adventures />}></Route>
+					</Routes>
+				</div>
+			</BrowserRouter>
 		</>
 	);
 }
