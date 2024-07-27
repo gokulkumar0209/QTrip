@@ -21,17 +21,39 @@ function Home() {
 				<div className="absolute flex flex-col items-center  font-bold text-2xl">
 					<h2>Adventure is worthwhile</h2>
 					<h3>Discover New Places With Us, Adventure Awaits</h3>
-					<button className=" bg-black p-2 px-3 rounded-md ">
+					<button className=" bg-black p-2 px-3 rounded-md  bg-opacity-50">
 						Discover More
 					</button>
-					<div className="bg-black mt-44 space-x-4">
-						<button onClick={() => setPicutre(picture1)}>1</button>
-						<button onClick={() => setPicutre(picture2)}>2</button>
-						<button onClick={() => setPicutre(picture3)}>3</button>
-						<button onClick={() => setPicutre(picture4)}>4</button>
-						<button onClick={() => setPicutre(picture5)}>5</button>
+					<div className="bg-black mt-44 space-x-4 px-2 rounded-lg bg-opacity-50">
+						<button onClick={() => setPicutre(picture1)}>
+							<h1 className=" text-5xl mb-2">●</h1>
+						</button>
+						<button onClick={() => setPicutre(picture2)}>
+							<h1 className=" text-5xl mb-2">●</h1>
+						</button>
+						<button onClick={() => setPicutre(picture3)}>
+							<h1 className=" text-5xl mb-2">●</h1>
+						</button>
+						<button onClick={() => setPicutre(picture4)}>
+							<h1 className=" text-5xl mb-2">●</h1>
+						</button>
+						<button onClick={() => setPicutre(picture5)}>
+							<h1 className=" text-5xl mb-2">●</h1>
+						</button>
 					</div>
 				</div>
+			</div>
+			<div className="flex justify-center mt-2">
+				<h1 className=" text-white flex justify-between gap-2 text-2xl font-bold">
+					<span className=" bg-black px-2">P</span>
+					<span className=" bg-black px-2">A</span>
+					<span className=" bg-black px-2">C</span>
+					<span className=" bg-black px-2">K</span>
+					<span className=" bg-black px-2">A</span>
+					<span className=" bg-black px-2">G</span>
+					<span className=" bg-black px-2">E</span>
+					<span className=" bg-black px-2">S</span>
+				</h1>
 			</div>
 			<Cities />
 		</div>
