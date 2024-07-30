@@ -15,7 +15,7 @@ function Reviews() {
 					<span className=" bg-black px-2 rounded-md">S</span>
 				</h1>
 			</div>
-			<div className=" grid grid-cols-3 ml-4 mr-4 gap-4">
+			<div className=" grid grid-cols-6 ml-4 mr-4 gap-4">
 				{reviews.map((review, index) => {
 					return <Review key={index} review={review} />;
 				})}

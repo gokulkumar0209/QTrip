@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Adventure({ adt }) {
 	return (
@@ -12,9 +13,13 @@ function Adventure({ adt }) {
 				</div>
 
 				<div className="p-4 w-full text-center">
-					<div className="text-lg font-semibold text-gray-800 h-12">
-						{adt.name}
-					</div>
+					<Link to="/adventure/detail">
+						<button className=" bg-black text-white">
+							<div className="text-lg font-semibold p-2">
+								{adt.name}
+							</div>
+						</button>
+					</Link>
 					<div className=" flex justify-between">
 						<div className="text-md text-gray-600 mt-1">₹{adt.costPerHead}</div>
 						<div className="text-md text-gray-500 mt-1">
