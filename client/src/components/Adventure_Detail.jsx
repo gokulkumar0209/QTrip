@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Registration from "./Registration";
 // import "./Adventures_Detail.css";
 function Adventure_Detail() {
 	const adventure_id = localStorage.getItem("adventure_id");
@@ -32,7 +33,10 @@ function Adventure_Detail() {
 					</div>
 				))}
 			</div>
-			<div className=" mx-4">{advent.content}</div>
+			<div className=" grid grid-cols-2 ">
+				<div className=" mx-4 grid-cols-1">{advent.content}</div>
+				<Registration />
+			</div>
 		</div>
 	);
 }
