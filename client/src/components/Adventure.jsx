@@ -14,10 +14,11 @@ function Adventure({ adt }) {
 
 				<div className="p-4 w-full text-center">
 					<Link to="/adventure/detail">
-						<button className=" bg-black text-white">
-							<div className="text-lg font-semibold p-2">
-								{adt.name}
-							</div>
+						<button
+							className=" bg-black text-white"
+							onClick={() => localStorage.setItem("adventure_id", adt.id)}
+						>
+							<div className="text-lg font-semibold p-2">{adt.name}</div>
 						</button>
 					</Link>
 					<div className=" flex justify-between">
