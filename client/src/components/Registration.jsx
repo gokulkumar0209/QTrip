@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-function Registration() {
+function Registration({ price }) {
+	const [adult, setAdult] = useState(0);
+	const [child, setChild] = useState(0);
+	const [total, setTotal] = useState(0);
+	useEffect(() => {
+		setTotal((parseInt(adult) + parseInt(child)) * price);
+	}, [adult, child, price]);
 	return (
 		<div>
+			<div>{price}</div>
+			<div>{total}</div>
 			<form className="space-y-4">
 				<div>
 					<label for="name" className="block text-sm font-medium text-gray-700">
@@ -46,6 +54,8 @@ function Registration() {
 						className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
 						placeholder="Number of adults"
 						required
+						value={adult}
+						onChange={(e) => setAdult(e.target.value)}
 					/>
 				</div>
 
@@ -64,6 +74,8 @@ function Registration() {
 						className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
 						placeholder="Number of children"
 						required
+						value={child}
+						onChange={(e) => setChild(e.target.value)}
 					/>
 				</div>
 

@@ -35,7 +35,7 @@ function Adventure_Detail() {
 			</div>
 			<div className=" grid grid-cols-2 ">
 				<div className=" mx-4 grid-cols-1">{advent.content}</div>
-				<Registration />
+				<Registration price={advent.costPerHead} />
 			</div>
 		</div>
 	);
