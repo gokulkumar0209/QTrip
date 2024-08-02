@@ -17,6 +17,14 @@ function NavBar() {
 				<div>Review</div>
 				<div>Contact</div>
 			</div>
+			<div className=" space-x-2">
+				<Link to={"/signup"}>
+					<button>Signup</button>
+				</Link>
+				<Link to={"/login"}>
+					<button>Login</button>
+				</Link>
+			</div>
 		</div>
 	);
 }
