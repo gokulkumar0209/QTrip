@@ -14,6 +14,9 @@ function Login() {
 			});
 			if (res.status == 201) {
 				setMessage("Login Success");
+				localStorage.setItem("loggedIn", "true");
+				localStorage.setItem("userId", res.data.id);
+				window.location.reload(); //Refresh the page to reflect the login state
 			}
 		} catch (error) {
 			setMessage(error.res);

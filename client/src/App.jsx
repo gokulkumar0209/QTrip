@@ -12,6 +12,7 @@ function App() {
 	const value = "bengaluru";
 	localStorage.setItem(key, value);
 	localStorage.setItem("adventure_id", "2447910730");
+	localStorage.setItem("loggedIn", false);
 	return (
 		<>
 			<BrowserRouter>
