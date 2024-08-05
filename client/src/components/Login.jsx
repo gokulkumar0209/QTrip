@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 function Login() {
 	const loginUrl = import.meta.env.VITE_POST_LOGIN;
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [message, setMessage] = useState("");
+	const navigate = useNavigate();
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
@@ -18,6 +20,7 @@ function Login() {
 				localStorage.setItem("loggedIn", "true");
 				localStorage.setItem("userId", res.data.data.id);
 				localStorage.setItem("authToken", res.data.data.token);
+				navigate("/");
 				// window.location.reload(); //Refresh the page to reflect the login state
 			}
 		} catch (error) {

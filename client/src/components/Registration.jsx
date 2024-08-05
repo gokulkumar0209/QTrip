@@ -14,8 +14,9 @@ function Registration({ advent }) {
 	};
 
 	// Initialize the state with today's date in yyyy-MM-dd format
-	const today = new Date();
-	const [date, setDate] = useState(formatDate(today));
+	let tomorrow = new Date();
+	tomorrow.setDate(tomorrow.getDate() + 1);
+	const [date, setDate] = useState(formatDate(tomorrow));
 	const price = advent.costPerHead;
 	const userId = localStorage.getItem("userId");
 	const authToken = localStorage.getItem("authToken");

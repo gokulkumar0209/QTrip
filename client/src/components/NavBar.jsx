@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 function NavBar() {
+	const navigate = useNavigate();
 	const [logS, setLogS] = useState(false);
 	const location = useLocation();
 	useEffect(() => {
@@ -40,7 +41,7 @@ function NavBar() {
 				</div>
 			) : (
 				<div className=" space-x-2">
-					<button>Profile</button>
+					<button onClick={() => navigate("/profile")}>Profile</button>
 					<button onClick={handleLogout}>Logout</button>
 				</div>
 			)}
