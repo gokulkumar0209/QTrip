@@ -13,10 +13,12 @@ function Login() {
 				password: password,
 			});
 			if (res.status == 201) {
+				console.log(res);
 				setMessage("Login Success");
 				localStorage.setItem("loggedIn", "true");
-				localStorage.setItem("userId", res.data.id);
-				window.location.reload(); //Refresh the page to reflect the login state
+				localStorage.setItem("userId", res.data.data.id);
+				localStorage.setItem("authToken", res.data.data.token);
+				// window.location.reload(); //Refresh the page to reflect the login state
 			}
 		} catch (error) {
 			setMessage(error.res);
