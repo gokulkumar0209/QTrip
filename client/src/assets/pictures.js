@@ -1,13 +1,3 @@
-const picture2 =
-	"https://hips.hearstapps.com/hmg-prod/images/beautiful-landscape-view-of-fuji-mountain-in-royalty-free-image-1623253648.jpg";
-const picture1 =
-	"https://hips.hearstapps.com/hmg-prod/images/lofoten-summer-landscape-royalty-free-image-1623252210.jpg";
-const picture3 =
-	"https://hips.hearstapps.com/hmg-prod/images/tasman-glacier-lake-royalty-free-image-1623252368.jpg";
-const picture4 =
-	"https://hips.hearstapps.com/hmg-prod/images/mount-rainier-national-park-royalty-free-image-1623253026.jpg";
-const picture5 =
-	"https://hips.hearstapps.com/hmg-prod/images/mt-assiniboine-provincial-park-at-sunrise-royalty-free-image-1623253564.jpg";
 const ironman = {
 	id: 1,
 	img: "https://scontent.xx.fbcdn.net/v/t1.15752-9/451937614_1818917555185973_9038652003525814669_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=0024fc&_nc_ohc=uF5AYn6nVWsQ7kNvgE0bwpz&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_Q7cD1QFCY2IaCbBuJD0PZsv7EC0_FrR6piqzWIj3L0H4X6Gwtw&oe=66CF558D",
@@ -56,4 +46,4 @@ const blackpanther = {
 	rev: "Black Panther is a powerful and innovative hero, bringing a fresh perspective to the superhero genre. The portrayal of Wakanda and its culture is both enriching and immersive. Some might argue the character's story is slightly overshadowed by its political undertones, but overall, Black Panther is a remarkable and inspiring figure.",
 };
 const reviews = [ironman, spiderman, hulk, blackpanther, superman, batman];
-export { picture1, picture2, picture3, picture4, picture5, reviews };
+export { reviews };
