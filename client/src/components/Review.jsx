@@ -10,12 +10,14 @@ function Review({ review }) {
 		setPositive(arr);
 	}, []);
 	return (
-		<div className=" bg-white shadow-lg rounded-lg p-4 flex flex-col text-center hover:scale-105">
-			<img src={review.img}></img>
+		<div className=" shadow-lg rounded-lg  m-4  h-64 w-64 inline-block">
+			<img className=" rounded-lg" src={review.img}></img>
 
-			<h1 className=" uppercase my-2 font-semibold text-xl">{review.name}</h1>
+			<h1 className=" flex justify-start uppercase  font-semibold text-xl my-2">
+				{review.name}
+			</h1>
 
-			<h2 className=" flex justify-center">
+			<h2 className=" flex justify-start">
 				{positive.map((star, index) => (
 					<p key={index}>{star}</p>
 				))}

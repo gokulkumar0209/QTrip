@@ -7,6 +7,7 @@ import Adventure_Detail from "./components/Adventure_Detail";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Profile from "./components/Profile";
+import Review_Detail from "./components/Review_Detail";
 
 function App() {
 	const key = "city";
@@ -29,6 +30,7 @@ function App() {
 						<Route path="/signup" element={<Signup />}></Route>
 						<Route path="/login" element={<Login />}></Route>
 						<Route path="/profile" element={<Profile />}></Route>
+						<Route path="/reviews" element={<Review_Detail />}></Route>
 					</Routes>
 				</div>
 			</BrowserRouter>
