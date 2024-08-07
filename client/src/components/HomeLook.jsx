@@ -13,8 +13,12 @@ function HomeLook() {
 	};
 
 	return (
-		<div className="flex relative justify-center items-center text-white w-full">
-			<img className=" opacity-90 bg-cover" src={pictures[pictureIndex]}></img>
+		<div className="flex relative justify-center items-center text-white w-full ">
+			<img
+				className=" opacity-90 bg-cover object-cover h-[36rem] w-full"
+				src={pictures[pictureIndex]}
+			></img>
+
 			<div className="absolute flex items-center justify-between w-full h-full text-5xl p-2">
 				<SlArrowLeft
 					className=" bg-black bg-opacity-50 p-2 rounded-md transition-transform duration-300 ease-in-out  hover:text-6xl cursor-pointer"
