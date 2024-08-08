@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Adventure({ adt }) {
 	return (
 		<>
-			<div className="shadow-lg rounded-lg overflow-hidden flex flex-col items-center justify-center bg-white transform transition-transform duration-300 hover:scale-105">
+			<div className=" shadow-lg rounded-lg overflow-hidden flex flex-col items-center justify-center bg-white transform transition-transform duration-300 hover:scale-105">
 				<div className="h-40 w-full relative">
 					<div className="absolute top-0 right-0 bg-black bg-opacity-70 text-white px-2 py-1 m-2 rounded-lg text-xs font-semibold shadow-md">
 						{adt.category}

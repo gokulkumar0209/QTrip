@@ -21,14 +21,16 @@ function Adventures() {
 
 	return (
 		<>
-			<div className="grid grid-cols-4 gap-4 mt-4 ml-4 mr-4 ">
-				{adventureData.map((adt) => {
-					return (
-						<div key={adt.id}>
-							<Adventure adt={adt} />
-						</div>
-					);
-				})}
+			<div className=" pt-16">
+				<div className="grid grid-cols-4 gap-4 ml-4 mr-4">
+					{adventureData.map((adt) => {
+						return (
+							<div key={adt.id}>
+								<Adventure adt={adt} />
+							</div>
+						);
+					})}
+				</div>
 			</div>
 		</>
 	);

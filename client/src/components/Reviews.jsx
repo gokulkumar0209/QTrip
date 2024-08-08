@@ -6,15 +6,15 @@ function Reviews() {
 	const navigate = useNavigate();
 	return (
 		<div>
-			<div className="flex justify-center my-4">
+			<div className="flex justify-center my-4  bg-black p-2">
 				<h1 className=" text-white flex justify-between gap-2 text-2xl font-bold">
-					<span className=" bg-black px-2 rounded-md">R</span>
-					<span className=" bg-black px-2 rounded-md">E</span>
-					<span className=" bg-black px-2 rounded-md">V</span>
-					<span className=" bg-black px-2 rounded-md">I</span>
-					<span className=" bg-black px-2 rounded-md">E</span>
-					<span className=" bg-black px-2 rounded-md">W</span>
-					<span className=" bg-black px-2 rounded-md">S</span>
+					<span>R</span>
+					<span>E</span>
+					<span>V</span>
+					<span>I</span>
+					<span>E</span>
+					<span>W</span>
+					<span>S</span>
 				</h1>
 			</div>
 
@@ -28,10 +28,10 @@ function Reviews() {
 
 				<div
 					onClick={() => navigate("/reviews")}
-					className="shadow-lg rounded-lg m-4 h-64 w-64 inline-block absolute bg-blue-100"
+					className=" m-4 h-64 w-64 inline-block absolute pr-4 hover:scale-105"
 				>
-					<div className=" h-full  w-full flex items-center justify-center ">
-						<h1 className="text-blue-500">Click here for more reviews</h1>
+					<div className=" h-full  w-full flex rounded-lg items-center justify-center bg-black   hover:cursor-pointer  ">
+						<h1 className=" text-white">Click here for more reviews</h1>
 					</div>
 				</div>
 			</div>

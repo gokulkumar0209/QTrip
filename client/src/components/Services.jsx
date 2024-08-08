@@ -3,16 +3,16 @@ import React from "react";
 function Services() {
 	return (
 		<div>
-			<div className="flex justify-center my-4">
+			<div className="flex justify-center my-4 bg-black p-2">
 				<h1 className=" text-white flex justify-between gap-2 text-2xl font-bold">
-					<span className=" bg-black px-2 rounded-md">S</span>
-					<span className=" bg-black px-2 rounded-md">E</span>
-					<span className=" bg-black px-2 rounded-md">R</span>
-					<span className=" bg-black px-2 rounded-md">V</span>
-					<span className=" bg-black px-2 rounded-md">I</span>
-					<span className=" bg-black px-2 rounded-md">C</span>
-					<span className=" bg-black px-2 rounded-md">E</span>
-					<span className=" bg-black px-2 rounded-md">S</span>
+					<span>S</span>
+					<span>E</span>
+					<span>R</span>
+					<span >V</span>
+					<span>I</span>
+					<span>C</span>
+					<span>E</span>
+					<span>S</span>
 				</h1>
 			</div>
 			<div className=" grid grid-cols-3 ml-4 mr-4 gap-4">

@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
-import Cities from "./Cities";
 import HomeLook from "./HomeLook";
 import Services from "./Services";
 import Reviews from "./Reviews";
 import Contact from "./Contact";
 import About from "./About";
+import Packages from "./Packages";
 
 function Home({
 	setHomeRef,
@@ -37,22 +37,22 @@ function Home({
 	]);
 	return (
 		<div>
-			<div ref={newHomeRef}>
+			<div ref={newHomeRef} className=" scroll-mt-14">
 				<HomeLook />
 			</div>
-			<div ref={newPackageRef}>
-				<Cities />
+			<div ref={newPackageRef} className=" scroll-mt-14">
+				<Packages />
 			</div>
-			<div ref={newServiceRef}>
+			<div ref={newServiceRef} className=" scroll-mt-14">
 				<Services />
 			</div>
-			<div ref={newReviewRef}>
+			<div ref={newReviewRef} className=" scroll-mt-14">
 				<Reviews />
 			</div>
-			<div ref={newContactRef}>
+			<div ref={newContactRef} className=" scroll-mt-14">
 				<Contact />
 			</div>
-			<div ref={newAboutRef}>
+			<div ref={newAboutRef} className=" scroll-mt-14">
 				<About />
 			</div>
 		</div>

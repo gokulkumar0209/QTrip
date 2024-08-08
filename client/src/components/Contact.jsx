@@ -7,15 +7,15 @@ function Contact() {
 	const [message, setMessage] = useState("");
 	return (
 		<div>
-			<div className="flex justify-center my-4">
+			<div className="flex justify-center my-4 bg-black p-2">
 				<h1 className=" text-white flex justify-between gap-2 text-2xl font-bold">
-					<span className=" bg-black px-2 rounded-md">C</span>
-					<span className=" bg-black px-2 rounded-md">O</span>
-					<span className=" bg-black px-2 rounded-md">N</span>
-					<span className=" bg-black px-2 rounded-md">T</span>
-					<span className=" bg-black px-2 rounded-md">A</span>
-					<span className=" bg-black px-2 rounded-md">C</span>
-					<span className=" bg-black px-2 rounded-md">T</span>
+					<span>C</span>
+					<span>O</span>
+					<span>N</span>
+					<span>T</span>
+					<span>A</span>
+					<span>C</span>
+					<span>T</span>
 				</h1>
 			</div>
 			<div className=" flex justify-around text-lg">

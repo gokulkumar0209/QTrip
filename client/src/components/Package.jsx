@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-function City({ city }) {
+function Package({ city }) {
 	const navigate = useNavigate();
 	const handleSelect = () => {
 		localStorage.setItem("city", city.id);
@@ -31,9 +31,8 @@ function City({ city }) {
 			<div className="text-center m-2">
 				<p className="text-gray-600">{city.description}</p>
 			</div>
-			
 		</div>
 	);
 }
 
-export default City;
+export default Package;

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import City from "./City";
+
+import Package from "./Package";
 import axios from "axios";
 
-function Cities() {
+function Packages() {
 	const getCitiesUrl = import.meta.env.VITE_GET_CITIES;
 	const [cities, setCities] = useState([]);
 
@@ -20,22 +21,22 @@ function Cities() {
 
 	return (
 		<div>
-			<div className="flex justify-center mt-2">
+			<div className="flex justify-center  p-2 bg-black">
 				<h1 className=" text-white flex justify-between gap-2 text-2xl font-bold">
-					<span className=" bg-black px-2 rounded-md">P</span>
-					<span className=" bg-black px-2 rounded-md">A</span>
-					<span className=" bg-black px-2 rounded-md">C</span>
-					<span className=" bg-black px-2 rounded-md">K</span>
-					<span className=" bg-black px-2 rounded-md">A</span>
-					<span className=" bg-black px-2 rounded-md">G</span>
-					<span className=" bg-black px-2 rounded-md">E</span>
-					<span className=" bg-black px-2 rounded-md">S</span>
+					<span>P</span>
+					<span>A</span>
+					<span>C</span>
+					<span>K</span>
+					<span>A</span>
+					<span>G</span>
+					<span>E</span>
+					<span>S</span>
 				</h1>
 			</div>
 			<div className="grid grid-cols-4">
 				{cities.map((city, index) => (
 					<div key={index} className="">
-						<City city={city} />
+						<Package city={city} />
 					</div>
 				))}
 			</div>
@@ -43,4 +44,4 @@ function Cities() {
 	);
 }
 
-export default Cities;
+export default Packages;
