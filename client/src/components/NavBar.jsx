@@ -1,11 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
-
-function NavBar() {
+function NavBar({
+	homeRef,
+	packageRef,
+	serviceRef,
+	reviewRef,
+	contactRef,
+	aboutRef,
+}) {
 	const navigate = useNavigate();
 	const [logS, setLogS] = useState(false);
 	const location = useLocation();
+	const scrollToElement = (elementRef) => {
+		if (elementRef.current) {
+			elementRef.current.scrollIntoView({ behavior: "smooth" });
+		}
+	};
 	useEffect(() => {
 		const loggedIn = localStorage.getItem("loggedIn") === "true";
 		setLogS(loggedIn);
@@ -22,13 +33,14 @@ function NavBar() {
 				<button className=" ml-6 text-xl">Qtrip</button>
 			</Link>
 			<div className="flex justify-between space-x-4 mr-6 m-1">
-				<Link to={"/"}>
-					<div>Home</div>
-				</Link>
-				<div>Packages</div>
-				<div>Services</div>
-				<div>Review</div>
-				<div>Contact</div>
+				<button>
+					<Link to={"/"}>Home</Link>
+				</button>
+				<button onClick={() => scrollToElement(packageRef)}>Packages</button>
+				<button onClick={() => scrollToElement(serviceRef)}>Services</button>
+				<button onClick={() => scrollToElement(reviewRef)}>Review</button>
+				<button onClick={() => scrollToElement(contactRef)}>Contact</button>
+				<button onClick={() => scrollToElement(aboutRef)}>About</button>
 			</div>
 			{!logS ? (
 				<div className=" space-x-2 m-1 mr-6">

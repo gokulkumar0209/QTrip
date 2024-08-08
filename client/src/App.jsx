@@ -15,13 +15,42 @@ function App() {
 	localStorage.setItem(key, value);
 	localStorage.setItem("adventure_id", "2447910730");
 	localStorage.setItem("loggedIn", false);
+
+	const [homeRef, setHomeRef] = useState(null);
+	const [serviceRef, setServiceRef] = useState(null);
+	const [packageRef, setPackageRef] = useState(null);
+	const [reviewRef, setReviewRef] = useState(null);
+	const [contactRef, setContactRef] = useState(null);
+	const [aboutRef, setAboutRef] = useState(null);
+
 	return (
 		<>
 			<BrowserRouter>
-				<div className=" bg-gray-200">
-					<NavBar />
+				<div className=" bg-gray-200 ">
+					<div className=" fixed w-full z-50 ">
+						<NavBar
+							serviceRef={serviceRef}
+							homeRef={homeRef}
+							packageRef={packageRef}
+							reviewRef={reviewRef}
+							contactRef={contactRef}
+							aboutRef={aboutRef}
+						/>
+					</div>
 					<Routes>
-						<Route path="/" element={<Home />}></Route>
+						<Route
+							path="/"
+							element={
+								<Home
+									setHomeRef={setHomeRef}
+									setPackageRef={setPackageRef}
+									setServiceRef={setServiceRef}
+									setReviewRef={setReviewRef}
+									setContactRef={setContactRef}
+									setAboutRef={setAboutRef}
+								/>
+							}
+						></Route>
 						<Route path="/adventures" element={<Adventures />}></Route>
 						<Route
 							path="/adventure/detail"
