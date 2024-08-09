@@ -33,9 +33,9 @@ function Packages() {
 					<span>S</span>
 				</h1>
 			</div>
-			<div className="grid grid-cols-4">
+			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  ">
 				{cities.map((city, index) => (
-					<div key={index} className="">
+					<div key={index} className=" flex justify-center">
 						<Package city={city} />
 					</div>
 				))}

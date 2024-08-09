@@ -10,26 +10,30 @@ function Package({ city }) {
 
 	return (
 		<div
-			className="shadow-lg p-4 m-4 rounded-lg bg-white transition-transform  ease-in-out hover:scale-105 hover:bg-slate-200 cursor-pointer"
+			className="shadow-lg rounded-lg h-80 w-72 transition-transform ease-in-out cursor-pointer relative m-2 bg-gray-100 hover:shadow-2xl group"
 			onClick={handleSelect}
 		>
-			<div className="flex justify-center m-2">
-				<img
-					className="h-40 w-40 object-cover rounded-full"
-					src={city.image}
-					alt={`Image of ${city.city}`}
-				/>
+			<div className=" flex justify-center ">
+				<div className="container h-64 w-72 overflow-hidden rounded-md ">
+					<img
+						className=" w-full h-full object-cover group-hover:scale-105"
+						src={city.image}
+						alt={`Image of ${city.city}`}
+					/>
+				</div>
 			</div>
-			<div className="text-center m-2">
-				<h1 className="text-2xl font-bold uppercase">{city.city}</h1>
+			<div className=" top-2 left-2  absolute bg-gray-500 bg-opacity-60 rounded-lg ">
+				<h1 className="text-2xl font-bold text-white uppercase px-2 py-1">
+					{city.city}
+				</h1>
 			</div>
-			<div className="text-center m-2">
-				<p className="text-gray-700">
+			<div className="text-start ">
+				<p className="text-gray-700 p-2">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 				</p>
 			</div>
-			<div className="text-center m-2">
-				<p className="text-gray-600">{city.description}</p>
+			<div className="text-center absolute top-1/3 left-1/3 bg-gray-700 bg-opacity-60 rounded-md">
+				<p className=" text-white px-2">{city.description}</p>
 			</div>
 		</div>
 	);
