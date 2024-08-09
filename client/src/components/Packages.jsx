@@ -22,15 +22,8 @@ function Packages() {
 	return (
 		<div>
 			<div className="flex justify-center  p-2 bg-black">
-				<h1 className=" text-white flex justify-between gap-2 text-2xl font-bold">
-					<span>P</span>
-					<span>A</span>
-					<span>C</span>
-					<span>K</span>
-					<span>A</span>
-					<span>G</span>
-					<span>E</span>
-					<span>S</span>
+				<h1 className="text-white text-2xl font-bold tracking-widest">
+					PACKAGES
 				</h1>
 			</div>
 			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  ">

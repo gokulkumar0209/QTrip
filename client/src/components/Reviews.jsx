@@ -7,14 +7,8 @@ function Reviews() {
 	return (
 		<div>
 			<div className="flex justify-center my-4  bg-black p-2">
-				<h1 className=" text-white flex justify-between gap-2 text-2xl font-bold">
-					<span>R</span>
-					<span>E</span>
-					<span>V</span>
-					<span>I</span>
-					<span>E</span>
-					<span>W</span>
-					<span>S</span>
+				<h1 className="text-white text-2xl font-bold tracking-widest">
+					REVIEWS
 				</h1>
 			</div>
 

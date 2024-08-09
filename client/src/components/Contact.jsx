@@ -8,14 +8,8 @@ function Contact() {
 	return (
 		<div>
 			<div className="flex justify-center my-4 bg-black p-2">
-				<h1 className=" text-white flex justify-between gap-2 text-2xl font-bold">
-					<span>C</span>
-					<span>O</span>
-					<span>N</span>
-					<span>T</span>
-					<span>A</span>
-					<span>C</span>
-					<span>T</span>
+				<h1 className="text-white text-2xl font-bold tracking-widest">
+					CONTACT
 				</h1>
 			</div>
 			<div className=" flex justify-around text-lg">
