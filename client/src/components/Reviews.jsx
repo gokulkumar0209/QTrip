@@ -6,32 +6,52 @@ import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 function Reviews() {
 	const reviewRef = useRef(null);
 	const navigate = useNavigate();
+	const scrollReview = (position) => {
+		if (reviewRef.current) {
+			reviewRef.current.scrollBy({
+				left: `${position}`, // Adjust the scroll amount as needed
+				behavior: "smooth",
+			});
+		}
+	};
 	return (
-		<div>
+		<div className="">
 			<div className="flex justify-center my-4  bg-black p-2">
 				<h1 className="text-white text-2xl font-bold tracking-widest">
 					REVIEWS
 				</h1>
 			</div>
-
-			<div
-				ref={reviewRef}
-				className=" overflow-x-scroll no-scrollbar whitespace-nowrap relative "
-			>
-				<Review review={reviews[0]} />
-				<Review review={reviews[1]} />
-				<Review review={reviews[2]} />
-				<Review review={reviews[3]} />
-				<Review review={reviews[4]} />
-				<Review review={reviews[5]} />
-
+			<div className=" relative">
 				<div
 					onClick={() => navigate("/reviews")}
-					className=" m-4 h-64 w-64 inline-block absolute pr-4 hover:scale-105"
+					className=" my-4 pr-4 absolute right-0 -top-7 cursor-pointer  "
 				>
-					<div className=" h-full  w-full flex rounded-lg items-center justify-center bg-black   hover:cursor-pointer  ">
-						<h1 className=" text-white">Click here for more reviews</h1>
+					<div className="  rounded-md px-2 bg-black hover:bg-slate-500">
+						<h1 className=" text-white font-semibold"> More reviews</h1>
 					</div>
+				</div>
+				<div
+					onClick={() => scrollReview(-300)}
+					className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-3xl bg-black bg-opacity-70 p-3 rounded-full cursor-pointer hover:bg-opacity-100 hover:scale-110 transition duration-300 ease-in-out shadow-lg"
+				>
+					<SlArrowLeft />
+				</div>
+				<div
+					onClick={() => scrollReview(300)}
+className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-3xl bg-black bg-opacity-70 p-3 rounded-full cursor-pointer hover:bg-opacity-100 hover:scale-110 transition duration-300 ease-in-out shadow-lg"				>
+					<SlArrowRight />
+				</div>
+
+				<div
+					ref={reviewRef}
+					className=" overflow-x-scroll  whitespace-nowrap no-scrollbar "
+				>
+					<Review review={reviews[0]} />
+					<Review review={reviews[1]} />
+					<Review review={reviews[2]} />
+					<Review review={reviews[3]} />
+					<Review review={reviews[4]} />
+					<Review review={reviews[5]} />
 				</div>
 			</div>
 		</div>
