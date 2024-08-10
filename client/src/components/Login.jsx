@@ -70,7 +70,9 @@ function Login() {
 							Login
 						</button>
 					</div>
-					<div className=" flex justify-center">{message && <p>{message}</p>}</div>
+					<div className=" flex justify-center">
+						{message && <p>{message}</p>}
+					</div>
 				</div>
 			</form>
 		</div>

@@ -18,7 +18,7 @@ function Package({ city }) {
 					<img
 						className=" w-full h-full object-cover group-hover:scale-105"
 						src={city.image}
-						alt={`Image of ${city.city}`}
+						alt={`Image`}
 					/>
 				</div>
 			</div>

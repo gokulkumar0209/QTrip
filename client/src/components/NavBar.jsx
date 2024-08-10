@@ -25,7 +25,7 @@ function NavBar({
 	];
 
 	const navigate = useNavigate();
-	const [logS, setLogS] = useState(false);
+	const [loggedIn, setLoggedIn] = useState(false);
 	const location = useLocation();
 	const resetButton = () => {
 		for (let ref of refs) {
@@ -33,7 +33,7 @@ function NavBar({
 		}
 	};
 	const scrollToElement = (e, elementRef, buttonRef) => {
-		if (elementRef.current) {
+		if (elementRef && elementRef.current) {
 			resetButton();
 			buttonRef.current.style.backgroundColor = "gray";
 			elementRef.current.scrollIntoView({ behavior: "smooth" });
@@ -41,21 +41,21 @@ function NavBar({
 			navigate("/");
 			resetButton();
 			setTimeout(() => {
-				if (buttonRef.current) {
+				if (buttonRef && buttonRef.current) {
 					buttonRef.current.click();
 				}
-			}, 100);
+			}, 400);
 		}
 	};
 	useEffect(() => {
-		const loggedIn = localStorage.getItem("loggedIn") === "true";
-		setLogS(loggedIn);
+		const newLoggedIn = localStorage.getItem("loggedIn") === "true";
+		setLoggedIn(newLoggedIn);
 	}, [location]);
 
 	const handleLogout = (e) => {
 		e.preventDefault();
 		localStorage.setItem("loggedIn", false);
-		setLogS(false);
+		setLoggedIn("false");
 		window.location.reload();
 	};
 	return (
@@ -114,7 +114,7 @@ function NavBar({
 			</div>
 
 			<div className=" text-white font-semibold">
-				{!logS ? (
+				{!loggedIn ? (
 					<div className=" space-x-2 m-1 mr-6">
 						<Link to={"/signup"}>
 							<button className=" bg-gray-700 p-1 px-2 mx-2 rounded-md">

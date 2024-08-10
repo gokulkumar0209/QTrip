@@ -22,10 +22,14 @@ function Adventures() {
 	return (
 		<>
 			<div className=" pt-16">
-				<div className="grid grid-cols-4 gap-4 ml-4 mr-4">
+				<div className=" mx-4 bg-black text-white uppercase flex justify-center rounded-md">
+					<h1 className=" text-xl p-2">Adventures in {cityName}</h1>
+				</div>
+
+				<div className="grid grid-cols-4 ml-4 mr-4 ">
 					{adventureData.map((adt) => {
 						return (
-							<div key={adt.id}>
+							<div className="" key={adt.id}>
 								<Adventure adt={adt} />
 							</div>
 						);

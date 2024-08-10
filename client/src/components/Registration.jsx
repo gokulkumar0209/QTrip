@@ -38,116 +38,131 @@ function Registration({ advent }) {
 			person: parseInt(adult) + parseInt(child),
 			adventure: advent.id,
 		};
-		try {
-			const res = await axios.post(reservationUrl, payLoad, {
-				headers: {
-					Authorization: `Bearer ${authToken}`,
-					"Content-Type": "application/json",
-				},
-			});
-			if (res.status === 200) {
-				setMessage("Registration success");
-				console.log(res);
+		if (loggedIn == false) {
+			try {
+				const res = await axios.post(reservationUrl, payLoad, {
+					headers: {
+						Authorization: `Bearer ${authToken}`,
+						"Content-Type": "application/json",
+					},
+				});
+				if (res.status === 200) {
+					setMessage("Registration success");
+				}
+			} catch (error) {
+				setMessage(error.response.data.message);
 			}
-			console.log(res);
-		} catch (error) {
-			console.log(error);
+		} else {
+			setMessage("Please Login");
 		}
 	};
 
 	return (
-		<div>
-			<div>{price}</div>
-			<div>{total}</div>
-			<form className="space-y-4" onSubmit={handleSubmit}>
-				<div>
-					<label
-						htmlFor="name"
-						className="block text-sm font-medium text-gray-700"
-					>
-						Name
-					</label>
-					<input
-						type="text"
-						id="name"
-						name="name"
-						className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-						placeholder="Enter your name"
-						required
-						value={name}
-						onChange={(e) => setName(e.target.value)}
-					/>
+		<div className=" border-8 mr-4 border-gray-600 rounded-xl bg-gray-400 ">
+			<div className=" p-2 pt-6">
+				<div className="flex justify-center text-xl font-bold">
+					<h2 className="mt-2">Make a reservation for {advent.name}</h2>
 				</div>
+				<div className="capitalize mt-6">
+					<div className="grid grid-cols-4">
+						<h3 className="col-span-3 flex justify-end">Price per person</h3>
+						<h3 className="col-span-1 flex justify-end font-bold">₹{price}</h3>
+					</div>
+					<div className="grid grid-cols-4 mt-2">
+						<h3 className="col-span-3 flex justify-end">Total</h3>
+						<h3 className="col-span-1 flex justify-end font-bold">₹{total}</h3>
+					</div>
+				</div>
+				<form className="space-y-4 mt-6" onSubmit={handleSubmit}>
+					<div>
+						<label
+							htmlFor="name"
+							className="block text-sm font-medium text-gray-700"
+						>
+							Name
+						</label>
+						<input
+							type="text"
+							id="name"
+							name="name"
+							className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+							placeholder="Enter your name"
+							required
+							value={name}
+							onChange={(e) => setName(e.target.value)}
+						/>
+					</div>
 
-				<div>
-					<label
-						htmlFor="date"
-						className="block text-sm font-medium text-gray-700"
-					>
-						Date
-					</label>
-					<input
-						type="date"
-						id="date"
-						name="date"
-						className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-						required
-						value={date}
-						onChange={(e) => setDate(e.target.value)}
-					/>
-				</div>
+					<div>
+						<label
+							htmlFor="date"
+							className="block text-sm font-medium text-gray-700"
+						>
+							Date
+						</label>
+						<input
+							type="date"
+							id="date"
+							name="date"
+							className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+							required
+							value={date}
+							onChange={(e) => setDate(e.target.value)}
+						/>
+					</div>
 
-				<div>
-					<label
-						htmlFor="adult"
-						className="block text-sm font-medium text-gray-700"
-					>
-						Adults
-					</label>
-					<input
-						type="number"
-						id="adult"
-						name="adult"
-						min="0"
-						className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-						placeholder="Number of adults"
-						required
-						value={adult}
-						onChange={(e) => setAdult(e.target.value)}
-					/>
-				</div>
+					<div>
+						<label
+							htmlFor="adult"
+							className="block text-sm font-medium text-gray-700"
+						>
+							Adults
+						</label>
+						<input
+							type="number"
+							id="adult"
+							name="adult"
+							min="0"
+							className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+							placeholder="Number of adults"
+							required
+							value={adult}
+							onChange={(e) => setAdult(e.target.value)}
+						/>
+					</div>
 
-				<div>
-					<label
-						htmlFor="child"
-						className="block text-sm font-medium text-gray-700"
-					>
-						Children
-					</label>
-					<input
-						type="number"
-						id="child"
-						name="child"
-						min="0"
-						className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-						placeholder="Number of children"
-						required
-						value={child}
-						onChange={(e) => setChild(e.target.value)}
-					/>
-				</div>
+					<div>
+						<label
+							htmlFor="child"
+							className="block text-sm font-medium text-gray-700"
+						>
+							Children
+						</label>
+						<input
+							type="number"
+							id="child"
+							name="child"
+							min="0"
+							className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+							placeholder="Number of children"
+							required
+							value={child}
+							onChange={(e) => setChild(e.target.value)}
+						/>
+					</div>
 
-				<div>
-					<button
-						type="submit"
-						className="w-full py-2 px-4 bg-blue-500 text-white font-semibold rounded-md shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed"
-						// disabled={!loggedIn}
-					>
-						Register
-					</button>
-				</div>
-			</form>
-			{message && <p>{message}</p>}
+					<div>
+						<button
+							type="submit"
+							className="w-full py-2 px-4 bg-blue-500 text-white font-semibold rounded-md shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed"
+							// disabled={!loggedIn}
+						>
+							Register
+						</button>
+					</div>
+				</form>
+				<div className=" flex justify-center p-2">{message && <p>{message}</p>}</div>
+			</div>
 		</div>
 	);
 }

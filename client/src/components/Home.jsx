@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
-import HomeLook from "./HomeLook";
+
 import Services from "./Services";
 import Reviews from "./Reviews";
 import Contact from "./Contact";
 import About from "./About";
 import Packages from "./Packages";
+import FirstView from "./FirstView";
 
 function Home({
 	setHomeRef,
@@ -38,7 +39,7 @@ function Home({
 	return (
 		<div>
 			<div ref={newHomeRef} className=" scroll-mt-14">
-				<HomeLook />
+				<FirstView />
 			</div>
 			<div ref={newPackageRef} className=" scroll-mt-14">
 				<Packages />

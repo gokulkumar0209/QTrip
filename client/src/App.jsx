@@ -3,11 +3,11 @@ import { Route, Router, BrowserRouter, Routes } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import Adventures from "./components/Adventures";
-import Adventure_Detail from "./components/Adventure_Detail";
+import Adventure_Detail from "./components/AdventureDetail";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Profile from "./components/Profile";
-import Review_Detail from "./components/Review_Detail";
+import Review_Detail from "./components/ReviewDetail";
 
 function App() {
 	const key = "city";

@@ -1,31 +1,37 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Adventure({ adt }) {
+	const navigate = useNavigate();
+	const handleSubmit = () => {
+		localStorage.setItem("adventure_id", adt.id);
+		navigate("/adventure/detail");
+		console.log("hi");
+	};
 	return (
-		<>
-			<div className=" shadow-lg rounded-lg overflow-hidden flex flex-col items-center justify-center bg-white transform transition-transform duration-300 hover:scale-105">
-				<div className="h-40 w-full relative">
-					<div className="absolute top-0 right-0 bg-black bg-opacity-70 text-white px-2 py-1 m-2 rounded-lg text-xs font-semibold shadow-md">
-						{adt.category}
+		<> 
+			<div onClick={handleSubmit} className=" m-2  rounded-md group hover:shadow-xl shadow-slate-600 ">
+				<div className=" group relative  ">
+					<div className=" flex justify-center  container h-40 w-full overflow-hidden rounded-t-md  ">
+						<img
+							className=" w-full h-full object-cover group-hover:scale-110 "
+							src={adt.image}
+							alt=""
+						/>
 					</div>
-					<img className="h-full w-full object-cover" src={adt.image} alt="" />
+					<div className=" bg-gray-500 text-white absolute right-0 top-0 m-2 rounded-md ">
+						<h2 className=" px-2">{adt.category}</h2>
+					</div>
+
+					<div className=" container absolute bottom-0 left-0   bg-gray-500 flex justify-center bg-opacity-60 group-hover:bg-gray-700">
+						<h1 className=" text-white  text-center ">{adt.name}</h1>
+					</div>
 				</div>
 
-				<div className="p-4 w-full text-center">
-					<Link to="/adventure/detail">
-						<button
-							className=" bg-black text-white"
-							onClick={() => localStorage.setItem("adventure_id", adt.id)}
-						>
-							<div className="text-lg font-semibold p-2">{adt.name}</div>
-						</button>
-					</Link>
-					<div className=" flex justify-between">
-						<div className="text-md text-gray-600 mt-1">₹{adt.costPerHead}</div>
-						<div className="text-md text-gray-500 mt-1">
-							{adt.duration} Hours
-						</div>
+				<div>
+					<div className="  bg-gray-600 text-white flex justify-between px-4 rounded-b-md group-hover:bg-gray-700">
+						<div>₹{adt.costPerHead}</div>
+						<div>{adt.duration} Hours</div>
 					</div>
 				</div>
 			</div>

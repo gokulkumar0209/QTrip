@@ -2,14 +2,14 @@ import React from "react";
 import { useState } from "react";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import { pictures } from "../assets/home_look";
-function HomeLook() {
-	const [pictureIndex, setPicutreIndex] = useState(0);
+function FirstView() {
+	const [pictureIndex, setPictureIndex] = useState(0);
 	const n = pictures.length;
 	const rightPicture = () => {
-		setPicutreIndex((pictureIndex + 1) % n);
+		setPictureIndex((pictureIndex + 1) % n);
 	};
 	const leftPicture = () => {
-		setPicutreIndex((pictureIndex - 1 + n) % n);
+		setPictureIndex((pictureIndex - 1 + n) % n);
 	};
 
 	return (
@@ -29,9 +29,12 @@ function HomeLook() {
 					onClick={rightPicture}
 				></SlArrowRight>
 			</div>
-			<div className="absolute flex flex-col items-center  font-bold text-2xl">
-				<h2>Adventure is worthwhile</h2>
-				<h3>Discover New Places With Us, Adventure Awaits</h3>
+			<div className="absolute flex flex-col items-center  font-bold text-2xl ">
+				<div className=" bg-black p-4 bg-opacity-50 rounded-md">
+					<div><h2 className=" flex justify-center">Adventure is worthwhile</h2></div>
+					<div><h3>Discover New Places With Us, Adventure Awaits</h3></div>
+				</div>
+
 				<button
 					className=" bg-black p-2 px-3 rounded-md mt-3  bg-opacity-50 hover:text-3xl hover:mt-2 cursor-pointer"
 					onClick={() => window.scrollBy(0, 750)}
@@ -43,4 +46,4 @@ function HomeLook() {
 	);
 }
 
-export default HomeLook;
+export default FirstView;
