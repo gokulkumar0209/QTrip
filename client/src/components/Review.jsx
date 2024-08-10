@@ -13,11 +13,11 @@ function Review({ review }) {
 		<div className=" shadow-lg rounded-lg  m-4  h-64 w-64 inline-block">
 			<img className=" rounded-lg" src={review.img}></img>
 
-			<h1 className=" flex justify-start uppercase  font-semibold text-xl my-2">
+			<h1 className=" flex justify-center uppercase  font-semibold text-xl my-2">
 				{review.name}
 			</h1>
 
-			<h2 className=" flex justify-start">
+			<h2 className=" flex justify-center">
 				{positive.map((star, index) => (
 					<p key={index}>{star}</p>
 				))}

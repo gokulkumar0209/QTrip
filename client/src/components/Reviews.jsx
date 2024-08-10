@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useRef } from "react";
 import { reviews } from "../assets/reviews";
 import Review from "./Review";
 import { useNavigate } from "react-router-dom";
+import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 function Reviews() {
+	const reviewRef = useRef(null);
 	const navigate = useNavigate();
 	return (
 		<div>
@@ -12,7 +14,10 @@ function Reviews() {
 				</h1>
 			</div>
 
-			<div className=" overflow-auto whitespace-nowrap relative">
+			<div
+				ref={reviewRef}
+				className=" overflow-x-scroll no-scrollbar whitespace-nowrap relative "
+			>
 				<Review review={reviews[0]} />
 				<Review review={reviews[1]} />
 				<Review review={reviews[2]} />

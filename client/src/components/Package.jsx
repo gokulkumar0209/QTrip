@@ -10,11 +10,11 @@ function Package({ city }) {
 
 	return (
 		<div
-			className="shadow-lg rounded-lg h-80 w-72 transition-transform ease-in-out cursor-pointer relative m-2 bg-gray-100 hover:shadow-2xl group"
+			className=" rounded-lg h-80 w-72 transition-transform ease-in-out cursor-pointer relative m-2 bg-gray-100 hover:shadow-2xl group"
 			onClick={handleSelect}
 		>
 			<div className=" flex justify-center ">
-				<div className="container h-64 w-72 overflow-hidden rounded-md ">
+				<div className="container h-64 w-72 overflow-hidden rounded-t-md ">
 					<img
 						className=" w-full h-full object-cover group-hover:scale-105"
 						src={city.image}

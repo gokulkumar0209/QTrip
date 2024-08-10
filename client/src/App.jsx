@@ -26,7 +26,7 @@ function App() {
 	return (
 		<>
 			<BrowserRouter>
-				<div className=" bg-gray-200 ">
+				<div className=" bg-gray-100 ">
 					<div className=" fixed w-full z-50 ">
 						<NavBar
 							serviceRef={serviceRef}
