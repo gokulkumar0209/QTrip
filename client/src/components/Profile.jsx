@@ -46,7 +46,7 @@ function Profile() {
 
 	return (
 		<div className="pt-16">
-			<div className="bg-gray-300 p-4 rounded-t-lg text-lg font-semibold">
+			<div className="bg-gray-300 p-4 rounded-t-lg text-lg font-semibold ">
 				Your Reservations ({data.length})
 			</div>
 			<div className="grid grid-cols-4 gap-4 bg-gray-300 p-4 rounded-b-lg">
@@ -54,9 +54,9 @@ function Profile() {
 					data.map((reservation) => (
 						<div
 							key={reservation.id}
-							className="bg-gray-500 card p-4 rounded-lg shadow-lg"
+							className="bg-white card p-4 rounded-lg shadow-lg grid grid-rows-6"
 						>
-							<div className="container space-y-4">
+							<div className="container space-y-4 row-span-5 ">
 								<h2 className="text-xl font-semibold">
 									Booked under:{" "}
 									<span className="font-normal">{reservation.name}</span>
@@ -67,7 +67,7 @@ function Profile() {
 										{reservation.adventureName}
 									</span>
 								</h3>
-								<div className="text-sm text-gray-200 space-y-1">
+								<div className="text-sm text-gray-600 space-y-1">
 									<div>
 										<span className="font-medium">Date:</span>{" "}
 										{reservation.date}
@@ -85,16 +85,18 @@ function Profile() {
 										{reservation.time.slice(4, -38)}
 									</div>
 								</div>
+							</div>
+							<div className="row-span-1 flex items-end">
 								{!reservation.isCancelled ? (
 									<button
 										onClick={(e) => handleDelete(e, reservation.id)}
-										className="mt-4 w-full bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600"
+										className="w-full bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600"
 										aria-label={`Delete reservation for ${reservation.name}`}
 									>
 										Delete
 									</button>
 								) : (
-									<h2 className="mt-4 bg-gray-800 text-white py-2 px-4 rounded text-center">
+									<h2 className="w-full bg-gray-800 text-white py-2 px-4 rounded text-center">
 										Cancelled
 									</h2>
 								)}
