@@ -12,8 +12,8 @@ function Review({ review }) {
 	return (
 		<div className=" shadow-lg rounded-lg  m-4 w-96 h-36  inline-block">
 			<div className="grid grid-cols-6 space-x-8">
-				<div className="container overflow-hidden h-12 w-12 clear-start bg-green-200 col-span-1">
-					<img className=" rounded-lg " src={review.img}></img>
+				<div className="container overflow-hidden h-12 w-12 clear-start ml-4 col-span-1">
+					<img className=" rounded-full " src={review.img}></img>
 				</div>
 				<div className="  col-span-5 h-12 ">
 					<h1 className=" flex justify-start uppercase  font-semibold text-base ">
