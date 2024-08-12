@@ -27,9 +27,9 @@ function Package({ city }) {
 					{city.city}
 				</h1>
 			</div>
-			<div className="text-start ">
-				<p className="text-gray-700 p-2">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+			<div className="text-start bg-gray-700 rounded-b-md">
+				<p className="text-white p-2 ">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit .
 				</p>
 			</div>
 			<div className="text-center absolute top-1/3 left-1/3 bg-gray-700 bg-opacity-60 rounded-md">

@@ -9,52 +9,52 @@ function Contact() {
 		<div>
 			<div className="flex justify-center my-4 bg-black p-2">
 				<h1 className="text-white text-2xl font-bold tracking-widest">
-					CONTACT
+					CONTACT US
 				</h1>
 			</div>
 			<div className=" flex justify-around text-lg">
-				<img className=" w-96 h-96 ml-20 my-2 rounded-md" src={picture}></img>
+				<div className=" container w-96 h-96 ml-20 my-2 rounded-md">
+					<img className=" rounded-md " src={picture}></img>
+				</div>
+				<div className="mr-20  bg-gray-400 my-2  w-96 h-96 rounded-md">
+					<form className=" p-4 my-2 ">
+						<div className=" grid  grid-rows-6  gap-y-2 ">
+							<input
+								className="w-full rounded-md p-2 "
+								type="text"
+								id="name"
+								name="name"
+								placeholder="name"
+								required
+							/>
 
-				<form className="mr-20">
-					<div className=" grid  gap-y-2">
-						<label for="name">Name</label>
-						<input
-							className="w-96 rounded-sm p-2"
-							type="text"
-							id="name"
-							name="name"
-							placeholder="name"
-							required
-						/>
+							<input
+								className="rounded-md p-2"
+								type="email"
+								id="email"
+								name="email"
+								placeholder="email"
+								required
+							/>
 
-						<label for="email">Email</label>
-						<input
-							className="rounded-sm p-2"
-							type="email"
-							id="email"
-							name="email"
-							placeholder="email"
-							required
-						/>
+							<textarea
+								className="rounded-md p-2  row-span-3"
+								id="message"
+								name="message"
+								rows="4"
+								required
+								placeholder="message"
+							></textarea>
 
-						<label for="message">Message</label>
-						<textarea
-							className="rounded-sm p-2"
-							id="message"
-							name="message"
-							rows="4"
-							required
-							placeholder="message"
-						></textarea>
-
-						<button
-							className=" flex justify-center p-2 bg-black text-white rounded-sm"
-							type="submit"
-						>
-							Submit
-						</button>
-					</div>
-				</form>
+							<button
+								className=" flex justify-center p-2 mt-2 bg-black text-white rounded-md"
+								type="submit"
+							>
+								Submit
+							</button>
+						</div>
+					</form>
+				</div>
 			</div>
 		</div>
 	);
