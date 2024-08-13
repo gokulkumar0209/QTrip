@@ -4,7 +4,6 @@ import { IsLoggedInContext } from "../store/IsLoggedInContext";
 function Profile() {
 	const [data, setData] = useState([]);
 	const userId = localStorage.getItem("userId");
-	const [message, setMessage] = useState("");
 	const reservUrl = import.meta.env.VITE_GET_RESERVATION + userId;
 	const deleteUrl = import.meta.env.VITE_DELETE_RESERVATION;
 	const { isLoggedIn, setIsLoggedIn, authToken, setAuthToken } =
@@ -38,10 +37,10 @@ function Profile() {
 				data: { userId: userId }, // Include the body data
 			});
 			if (response.status === 200) {
-				setData((prevData) =>
-					prevData.filter((reservation) => reservation.id !== id)
-				);
-				setMessage("Cancelled");
+				e.target.style.backgroundColor = "#1f2937";
+
+				// Change the inner text to "Cancelled"
+				e.target.innerText = "Cancelled";
 			}
 		} catch (error) {
 			setMessage(error.response?.data);
@@ -100,9 +99,9 @@ function Profile() {
 										Delete
 									</button>
 								) : (
-									<h2 className="w-full bg-gray-800 text-white py-2 px-4 rounded text-center">
+									<button className="w-full bg-gray-800 text-white py-2 px-4 rounded text-center">
 										Cancelled
-									</h2>
+									</button>
 								)}
 							</div>
 						</div>
@@ -112,9 +111,6 @@ function Profile() {
 						No reservations found.
 					</div>
 				)}
-				<div className=" flex justify-center">
-					{message && <p>{message}</p>}
-				</div>
 			</div>
 		</div>
 	);
