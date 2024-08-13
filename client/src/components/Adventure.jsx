@@ -1,16 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
+import { AdventureIdContext } from "../store/AdventureIdContext";
 function Adventure({ adt }) {
+	const { adventureId, setAdventureId } = useContext(AdventureIdContext);
 	const navigate = useNavigate();
 	const handleSubmit = () => {
-		localStorage.setItem("adventure_id", adt.id);
+		setAdventureId(adt.id);
+		// localStorage.setItem("adventure_id", adt.id);
 		navigate("/adventure/detail");
 		console.log("hi");
 	};
 	return (
-		<> 
-			<div onClick={handleSubmit} className=" m-2  rounded-md group hover:shadow-xl shadow-slate-600 ">
+		<>
+			<div
+				onClick={handleSubmit}
+				className=" m-2  rounded-md group hover:shadow-xl shadow-slate-600 "
+			>
 				<div className=" group relative  ">
 					<div className=" flex justify-center  container h-40 w-full overflow-hidden rounded-t-md  ">
 						<img

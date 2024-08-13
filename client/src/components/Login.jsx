@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { RiAccountCircleFill } from "react-icons/ri";
-
+import { IsLoggedInContext } from "../store/IsLoggedInContext";
 function Login() {
+	const { isLoggedIn, setIsLoggedIn, authToken, setAuthToken } =
+		useContext(IsLoggedInContext);
 	const loginUrl = import.meta.env.VITE_POST_LOGIN;
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -17,16 +19,20 @@ function Login() {
 				password: password,
 			});
 			if (res.status == 201) {
+			
 				setMessage("");
-				localStorage.setItem("loggedIn", "true");
+				// console.log(isLoggedIn,authToken)
+				setIsLoggedIn("true");
+				
 				localStorage.setItem("userId", res.data.data.id);
-				localStorage.setItem("authToken", res.data.data.token);
+				setAuthToken(res.data.data.token);
 				navigate("/");
+				
 			}
 		} catch (error) {
-			const mes = error.response.data.message;
+			const mes = error.response?.data?.message || 'An error occurred'
 			setMessage(mes);
-			console.log(message);
+			// console.log(message);
 		}
 	};
 	return (

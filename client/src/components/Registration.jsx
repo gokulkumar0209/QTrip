@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { IsLoggedInContext } from "../store/IsLoggedInContext";
 import axios from "axios";
 
 function Registration({ advent }) {
+	const { isLoggedIn, setIsLoggedIn, authToken, setAuthToken } =
+		useContext(IsLoggedInContext);
 	const [adult, setAdult] = useState(0);
 	const [child, setChild] = useState(0);
 	const [total, setTotal] = useState(0);
@@ -19,11 +22,10 @@ function Registration({ advent }) {
 	const [date, setDate] = useState(formatDate(tomorrow));
 	const price = advent.costPerHead;
 	const userId = localStorage.getItem("userId");
-	const authToken = localStorage.getItem("authToken");
+
 	const [message, setMessage] = useState("");
 
 	const reservationUrl = import.meta.env.VITE_POST_RESERVATION;
-	const loggedIn = localStorage.getItem("loggedIn");
 
 	useEffect(() => {
 		setTotal((parseInt(adult) + parseInt(child)) * price);
@@ -38,7 +40,7 @@ function Registration({ advent }) {
 			person: parseInt(adult) + parseInt(child),
 			adventure: advent.id,
 		};
-		if (loggedIn == false) {
+		if (isLoggedIn == "true") {
 			try {
 				const res = await axios.post(reservationUrl, payLoad, {
 					headers: {
@@ -161,7 +163,9 @@ function Registration({ advent }) {
 						</button>
 					</div>
 				</form>
-				<div className=" flex justify-center p-2">{message && <p>{message}</p>}</div>
+				<div className=" flex justify-center p-2">
+					{message && <p>{message}</p>}
+				</div>
 			</div>
 		</div>
 	);

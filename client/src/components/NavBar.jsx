@@ -1,6 +1,12 @@
-import React, { useEffect, useReducer, useRef, useState } from "react";
+import React, {
+	useContext,
+	useEffect,
+	useReducer,
+	useRef,
+	useState,
+} from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-
+import { IsLoggedInContext } from "../store/IsLoggedInContext";
 function NavBar({
 	homeRef,
 	packageRef,
@@ -23,9 +29,9 @@ function NavBar({
 		contactButtonRef,
 		aboutButtonRef,
 	];
-
+	const { isLoggedIn, setIsLoggedIn, authToken, setAuthToken } =
+		useContext(IsLoggedInContext);
 	const navigate = useNavigate();
-	const [loggedIn, setLoggedIn] = useState(false);
 	const location = useLocation();
 	const resetButton = () => {
 		for (let ref of refs) {
@@ -47,15 +53,17 @@ function NavBar({
 			}, 400);
 		}
 	};
-	useEffect(() => {
-		const newLoggedIn = localStorage.getItem("loggedIn") === "true";
-		setLoggedIn(newLoggedIn);
-	}, [location]);
+	// useEffect(() => {
+	// 	const newLoggedIn = localStorage.getItem("loggedIn") === "true";
+	// 	setLoggedIn(newLoggedIn);
+	// }, [location]);
 
 	const handleLogout = (e) => {
 		e.preventDefault();
-		localStorage.setItem("loggedIn", false);
-		setLoggedIn("false");
+		// localStorage.setItem("loggedIn", false);
+		setIsLoggedIn("");
+		setAuthToken("");
+		// setLoggedIn("false");
 		window.location.reload();
 	};
 	return (
@@ -114,7 +122,7 @@ function NavBar({
 			</div>
 
 			<div className=" text-white font-semibold">
-				{!loggedIn ? (
+				{!isLoggedIn ? (
 					<div className=" space-x-2 m-1 mr-6">
 						<Link to={"/signup"}>
 							<button className=" bg-gray-700 p-1 px-2 mx-2 rounded-md">

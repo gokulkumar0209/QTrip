@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
-
+import { IsLoggedInContext } from "../store/IsLoggedInContext";
 function Profile() {
 	const [data, setData] = useState([]);
 	const userId = localStorage.getItem("userId");
-	const authToken = localStorage.getItem("authToken");
+	// const authToken = localStorage.getItem("authToken");
 	const reservUrl = import.meta.env.VITE_GET_RESERVATION + userId;
 	const deleteUrl = import.meta.env.VITE_DELETE_RESERVATION;
-
+	const { isLoggedIn, setIsLoggedIn, authToken, setAuthToken } =
+		useContext(IsLoggedInContext);
 	useEffect(() => {
 		async function fetchData() {
 			try {

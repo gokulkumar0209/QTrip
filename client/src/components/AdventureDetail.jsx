@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Registration from "./Registration";
+import { AdventureIdContext } from "../store/AdventureIdContext";
 // import "./Adventures_Detail.css";
 function Adventure_Detail() {
-	const adventure_id = localStorage.getItem("adventure_id");
+	const { adventureId, setAdventureId } = useContext(AdventureIdContext);
 	const [images, setImages] = useState([""]);
 	const getAdventureDetailUrl =
-		import.meta.env.VITE_GET_ADVENTURE_DETAIL + adventure_id;
+		import.meta.env.VITE_GET_ADVENTURE_DETAIL + adventureId;
 	const [advent, setAdventData] = useState({});
 	async function fetchData() {
 		// console.log(getAdventureUrl);
