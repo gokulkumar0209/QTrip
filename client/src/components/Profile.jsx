@@ -4,7 +4,7 @@ import { IsLoggedInContext } from "../store/IsLoggedInContext";
 function Profile() {
 	const [data, setData] = useState([]);
 	const userId = localStorage.getItem("userId");
-	// const authToken = localStorage.getItem("authToken");
+	const [message, setMessage] = useState("");
 	const reservUrl = import.meta.env.VITE_GET_RESERVATION + userId;
 	const deleteUrl = import.meta.env.VITE_DELETE_RESERVATION;
 	const { isLoggedIn, setIsLoggedIn, authToken, setAuthToken } =
@@ -24,24 +24,27 @@ function Profile() {
 		}
 		fetchData();
 	}, [authToken, reservUrl]);
-
+	const payLoad = { userId: userId };
 	const handleDelete = async (e, id) => {
 		e.preventDefault();
 		try {
-			const response = await axios.delete(`${deleteUrl}/${id}`, {
+			const response = await axios({
+				method: "DELETE",
+				url: `${deleteUrl}/${id}`,
 				headers: {
 					Authorization: `Bearer ${authToken}`,
 					"Content-Type": "application/json",
 				},
+				data: { userId: userId }, // Include the body data
 			});
 			if (response.status === 200) {
 				setData((prevData) =>
 					prevData.filter((reservation) => reservation.id !== id)
 				);
-				console.log("Reservation deleted successfully");
+				setMessage("Cancelled");
 			}
 		} catch (error) {
-			console.error("Failed to delete reservation:", error);
+			setMessage(error.response?.data);
 		}
 	};
 
@@ -109,6 +112,9 @@ function Profile() {
 						No reservations found.
 					</div>
 				)}
+				<div className=" flex justify-center">
+					{message && <p>{message}</p>}
+				</div>
 			</div>
 		</div>
 	);
