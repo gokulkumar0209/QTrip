@@ -8,7 +8,6 @@ function Adventure({ adt }) {
 		setAdventureId(adt.id);
 		// localStorage.setItem("adventure_id", adt.id);
 		navigate("/adventure/detail");
-		console.log("hi");
 	};
 	return (
 		<>
