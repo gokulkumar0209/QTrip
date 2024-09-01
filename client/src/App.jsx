@@ -54,7 +54,7 @@ function App() {
 											/>
 										}
 									></Route>
-									<Route path="/adventures" element={<Adventures />}></Route>
+									<Route path="/adventures/:selectedCity" element={<Adventures />}></Route>
 									<Route
 										path="/adventure/detail"
 										element={<Adventure_Detail />}

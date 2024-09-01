@@ -7,7 +7,7 @@ function Package({ city }) {
 	const handleSelect = () => {
 		// localStorage.setItem("city", city.id);
 		setSelectedCity(city.id);
-		navigate("/adventures");
+		navigate(`/adventures/${city.id}`);
 	};
 
 	return (

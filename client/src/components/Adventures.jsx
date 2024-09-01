@@ -1,9 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import Adventure from "./Adventure";
 import { CityContext } from "../store/CityContext";
+import { useParams } from "react-router-dom";
 function Adventures() {
-	const { selectedCity, setSelectedCity } = useContext(CityContext);
+	// const { selectedCity, setSelectedCity } = useContext(CityContext);
+	const { selectedCity } = useParams();
 	// const cityName = localStorage.getItem("city");
+	// console.log(selectedCity)
 	// console.log(selectedCity)
 	const getAdventureUrl = import.meta.env.VITE_GET_ADVENTURES + selectedCity;
 
@@ -18,7 +21,7 @@ function Adventures() {
 
 	useEffect(() => {
 		fetchData();
-	}, []);
+	}, [selectedCity]);
 
 	return (
 		<>
