@@ -1,18 +1,18 @@
-import React, { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { AdventureIdContext } from "../store/AdventureIdContext";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+// import { AdventureIdContext } from "../store/AdventureIdContext";
 function Adventure({ adt }) {
-	const { adventureId, setAdventureId } = useContext(AdventureIdContext);
+	// const { adventureId, setAdventureId } = useContext(AdventureIdContext);
 	const navigate = useNavigate();
-	const handleSubmit = () => {
-		setAdventureId(adt.id);
-		// localStorage.setItem("adventure_id", adt.id);
-		navigate("/adventure/detail");
-	};
+	// const handleSubmit = () => {
+	// 	// setAdventureId(adt.id);
+	// 	// localStorage.setItem("adventure_id", adt.id);
+	// 	navigate(`/adventure/${adt.name}/${adt.id}`);
+	// };
 	return (
 		<>
 			<div
-				onClick={handleSubmit}
+				onClick={() => navigate(`/adventure/${adt.name}/${adt.id}`)}
 				className=" m-2  rounded-md group hover:shadow-xl shadow-slate-600 "
 			>
 				<div className=" group relative  ">

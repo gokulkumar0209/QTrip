@@ -1,10 +1,8 @@
 import React, {
 	useContext,
-	useEffect,
-	useReducer,
 	useRef,
-	useState,
 } from "react";
+
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { IsLoggedInContext } from "../store/IsLoggedInContext";
 function NavBar({

@@ -1,19 +1,19 @@
-import React, { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { CityContext } from "../store/CityContext";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+
 function Package({ city }) {
-	const { selectedCity, setSelectedCity } = useContext(CityContext);
+	// const { selectedCity, setSelectedCity } = useContext(CityContext);
 	const navigate = useNavigate();
-	const handleSelect = () => {
-		// localStorage.setItem("city", city.id);
-		setSelectedCity(city.id);
-		navigate(`/adventures/${city.id}`);
-	};
+	// const handleSelect = () => {
+	// 	// localStorage.setItem("city", city.id);
+	// 	// setSelectedCity(city.id);
+	// 	navigate(`/adventures/${city.id}`);
+	// };
 
 	return (
 		<div
 			className=" rounded-lg h-80 w-72 transition-transform ease-in-out cursor-pointer relative m-2 bg-gray-100 hover:shadow-2xl group"
-			onClick={handleSelect}
+			onClick={() => navigate(`/adventures/${city.id}`)}
 		>
 			<div className=" flex justify-center ">
 				<div className="container h-64 w-72 overflow-hidden rounded-t-md ">

@@ -1,12 +1,15 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
 import Registration from "./Registration";
-import { AdventureIdContext } from "../store/AdventureIdContext";
+// import { AdventureIdContext } from "../store/AdventureIdContext";
+import { useParams } from "react-router-dom";
 // import "./Adventures_Detail.css";
 function Adventure_Detail() {
-	const { adventureId, setAdventureId } = useContext(AdventureIdContext);
+	// const { adventureId, setAdventureId } = useContext(AdventureIdContext);
+	const {adtId } = useParams();
+	// console.log(adtId)
 	const [images, setImages] = useState([""]);
 	const getAdventureDetailUrl =
-		import.meta.env.VITE_GET_ADVENTURE_DETAIL + adventureId;
+		import.meta.env.VITE_GET_ADVENTURE_DETAIL + adtId;
 	const [advent, setAdventData] = useState({});
 	async function fetchData() {
 		// console.log(getAdventureUrl);

@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
 import Adventure from "./Adventure";
-import { CityContext } from "../store/CityContext";
+// import { CityContext } from "../store/CityContext";
 import { useParams } from "react-router-dom";
 function Adventures() {
 	// const { selectedCity, setSelectedCity } = useContext(CityContext);

@@ -31,8 +31,14 @@ function FirstView() {
 			</div>
 			<div className="absolute flex flex-col items-center  font-bold text-2xl ">
 				<div className=" bg-black p-4 bg-opacity-50 rounded-md">
-					<div><h2 className=" flex justify-center capitalize">Adventure is worthwhile</h2></div>
-					<div><h3>Discover New Places With Us, Adventure Awaits</h3></div>
+					<div>
+						<h2 className=" flex justify-center capitalize">
+							Adventure is worthwhile
+						</h2>
+					</div>
+					<div>
+						<h3>Discover New Places With Us, Adventure Awaits</h3>
+					</div>
 				</div>
 
 				<button
