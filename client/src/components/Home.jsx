@@ -41,8 +41,9 @@ function Home({
 			<div ref={newHomeRef} className=" scroll-mt-14">
 				<FirstView />
 			</div>
-			<div ref={newPackageRef} className=" scroll-mt-14">
+			<div ref={newPackageRef} className="">
 				<Packages />
+				
 			</div>
 			<div ref={newServiceRef} className=" scroll-mt-14">
 				<Services />

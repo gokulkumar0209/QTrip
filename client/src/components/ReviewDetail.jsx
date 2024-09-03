@@ -9,7 +9,7 @@ function Review_Detail() {
 		return arr;
 	};
 	return (
-		<div className=" pt-16 px-4">
+		<div className=" px-4">
 			{reviews.map((review, index) => {
 				const arr = addStar(review.rating);
 				return (

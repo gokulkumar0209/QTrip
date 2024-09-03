@@ -28,7 +28,7 @@ function App() {
 			<BrowserRouter>
 				<IsLoggedInProvider>
 					<div className=" bg-gray-100 ">
-						<div className=" fixed w-full z-50 ">
+						<div className=" sticky top-0 w-full z-50 ">
 							<NavBar
 								serviceRef={serviceRef}
 								homeRef={homeRef}

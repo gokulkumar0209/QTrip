@@ -1,4 +1,4 @@
-import React, {  useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Adventure from "./Adventure";
 // import { CityContext } from "../store/CityContext";
 import { useParams } from "react-router-dom";
@@ -25,8 +25,8 @@ function Adventures() {
 
 	return (
 		<>
-			<div className=" pt-16">
-				<div className=" mx-4 bg-black text-white uppercase flex justify-center rounded-md">
+			<div className=" ">
+				<div className=" sticky top-14  z-50 mt-2 mx-4 bg-black text-white uppercase flex justify-center rounded-md">
 					<h1 className=" text-xl p-2">Adventures in {selectedCity}</h1>
 				</div>
 

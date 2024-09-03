@@ -1,7 +1,4 @@
-import React, {
-	useContext,
-	useRef,
-} from "react";
+import React, { useContext, useRef } from "react";
 
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { IsLoggedInContext } from "../store/IsLoggedInContext";
@@ -30,7 +27,7 @@ function NavBar({
 	const { isLoggedIn, setIsLoggedIn, authToken, setAuthToken } =
 		useContext(IsLoggedInContext);
 	const navigate = useNavigate();
-	const location = useLocation();
+
 	const resetButton = () => {
 		for (let ref of refs) {
 			ref.current.style.backgroundColor = "black";
@@ -51,10 +48,6 @@ function NavBar({
 			}, 400);
 		}
 	};
-	// useEffect(() => {
-	// 	const newLoggedIn = localStorage.getItem("loggedIn") === "true";
-	// 	setLoggedIn(newLoggedIn);
-	// }, [location]);
 
 	const handleLogout = (e) => {
 		e.preventDefault();
@@ -65,7 +58,7 @@ function NavBar({
 		window.location.reload();
 	};
 	return (
-		<div className=" text-white flex justify-between bg-black text-lg p-2 fixed w-full">
+		<div className=" text-white flex justify-between bg-black text-lg p-2  w-full">
 			<div>
 				<Link to={"/"} className="m-1">
 					<button onClick={resetButton} className=" ml-6 text-xl p-2">

@@ -13,7 +13,7 @@ function FirstView() {
 	};
 
 	return (
-		<div className="flex relative justify-center items-center text-white w-full pt-12 ">
+		<div className="flex relative justify-center items-center text-white w-full ">
 			<img
 				className=" opacity-90 bg-cover object-cover h-[36rem] w-full"
 				src={pictures[pictureIndex]}

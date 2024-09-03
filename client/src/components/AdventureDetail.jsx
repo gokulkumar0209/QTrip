@@ -27,9 +27,9 @@ function Adventure_Detail() {
 		// console.log(advent);
 	}, [getAdventureDetailUrl]);
 	return (
-		<div className=" pt-16">
-			<div className="mx-4 ">
-				<div className=" bg-black flex justify-center rounded-t-lg">
+		<div className=" ">
+			<div className="mx-4 sticky top-14 m-2">
+				<div className=" bg-black flex justify-center rounded-t-lg ">
 					<h1 className=" text-xl p-2 text-white">{advent.name}</h1>
 				</div>
 				<div className=" bg-gray-300 flex justify-center rounded-b-lg">

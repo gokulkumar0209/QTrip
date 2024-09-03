@@ -48,7 +48,7 @@ function Profile() {
 	};
 
 	return (
-		<div className="pt-16">
+		<div className="">
 			<div className="bg-gray-300 p-4 rounded-t-lg text-lg font-semibold ">
 				Your Reservations ({data.length})
 			</div>
