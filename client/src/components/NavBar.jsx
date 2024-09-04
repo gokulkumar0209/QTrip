@@ -1,7 +1,7 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { IsLoggedInContext } from "../store/IsLoggedInContext";
+
 function NavBar({
 	homeRef,
 	packageRef,
@@ -24,10 +24,18 @@ function NavBar({
 		contactButtonRef,
 		aboutButtonRef,
 	];
-	const { isLoggedIn, setIsLoggedIn, authToken, setAuthToken } =
-		useContext(IsLoggedInContext);
-	const navigate = useNavigate();
+	const sectionRefs = [
+		homeRef,
+		packageRef,
+		serviceRef,
+		reviewRef,
+		contactRef,
+		aboutRef,
+	];
 
+	const navigate = useNavigate();
+	const userId = localStorage.getItem("userId");
+	const authToken = localStorage.getItem("authToken");
 	const resetButton = () => {
 		for (let ref of refs) {
 			ref.current.style.backgroundColor = "black";
@@ -51,12 +59,37 @@ function NavBar({
 
 	const handleLogout = (e) => {
 		e.preventDefault();
-		// localStorage.setItem("loggedIn", false);
-		setIsLoggedIn("");
-		setAuthToken("");
-		// setLoggedIn("false");
+		localStorage.setItem("authToken", "");
+		localStorage.setItem("userId","")
+
 		window.location.reload();
 	};
+	const handleScroll = () => {
+		sectionRefs.forEach((sectionRef, index) => {
+			if (sectionRef.current) {
+				const { top, bottom } = sectionRef.current.getBoundingClientRect();
+				const windowHeight = window.innerHeight;
+				if ((top >= 0 && top < windowHeight / 2) || top < 64) {
+					resetButton();
+					refs[index].current.style.backgroundColor = "gray";
+				} else {
+					if (refs[index] && refs[index].current) {
+						refs[index].current.style.backgroundColor = "black";
+					}
+				}
+			} else {
+				refs.forEach((ref) => {
+					ref.current.style.backgroundColor = "black";
+				});
+			}
+		});
+	};
+	useEffect(() => {
+		window.addEventListener("scroll", handleScroll);
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
+	});
 	return (
 		<div className=" text-white flex justify-between bg-black text-lg p-2  w-full">
 			<div>
@@ -113,7 +146,7 @@ function NavBar({
 			</div>
 
 			<div className=" text-white font-semibold">
-				{!isLoggedIn ? (
+				{(!authToken || !userId) ? (
 					<div className=" space-x-2 m-1 mr-6">
 						<Link to={"/signup"}>
 							<button className=" bg-gray-700 p-1 px-2 mx-2 rounded-md">

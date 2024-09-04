@@ -19,18 +19,17 @@ function Login() {
 				password: password,
 			});
 			if (res.status == 201) {
-			
 				setMessage("");
 				// console.log(isLoggedIn,authToken)
 				setIsLoggedIn("true");
-				
+
 				localStorage.setItem("userId", res.data.data.id);
+				localStorage.setItem("authToken", res.data.data.token);
 				setAuthToken(res.data.data.token);
 				navigate("/");
-				
 			}
 		} catch (error) {
-			const mes = error.response?.data?.message || 'An error occurred'
+			const mes = error.response?.data?.message || "An error occurred";
 			setMessage(mes);
 			// console.log(message);
 		}

@@ -6,8 +6,7 @@ function Profile() {
 	const userId = localStorage.getItem("userId");
 	const reservUrl = import.meta.env.VITE_GET_RESERVATION + userId;
 	const deleteUrl = import.meta.env.VITE_DELETE_RESERVATION;
-	const { isLoggedIn, setIsLoggedIn, authToken, setAuthToken } =
-		useContext(IsLoggedInContext);
+	const authToken = localStorage.getItem("authToken")
 	useEffect(() => {
 		async function fetchData() {
 			try {
