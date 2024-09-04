@@ -38,23 +38,22 @@ function Home({
 	]);
 	return (
 		<div>
-			<div ref={newHomeRef} className=" scroll-mt-14">
+			<div ref={newHomeRef} className=" scroll-mt-[3.75rem]">
 				<FirstView />
 			</div>
-			<div ref={newPackageRef} className="">
+			<div ref={newPackageRef} className=" scroll-mt-[3.75rem]">
 				<Packages />
-				
 			</div>
-			<div ref={newServiceRef} className=" scroll-mt-14">
+			<div ref={newServiceRef} className=" scroll-mt-[3.75rem]">
 				<Services />
 			</div>
-			<div ref={newReviewRef} className=" scroll-mt-14">
+			<div ref={newReviewRef} className=" scroll-mt-[3.75rem]">
 				<Reviews />
 			</div>
-			<div ref={newContactRef} className=" scroll-mt-14">
+			<div ref={newContactRef} className=" scroll-mt-[3.75rem]">
 				<Contact />
 			</div>
-			<div ref={newAboutRef} className=" scroll-mt-14">
+			<div ref={newAboutRef} className=" scroll-mt-[3.75rem]">
 				<About />
 			</div>
 		</div>

@@ -20,7 +20,7 @@ function Packages() {
 	}, []);
 
 	return (
-		<div>
+		<div className="">
 			<div className="flex justify-center  p-2 bg-black">
 				<h1 className="text-white text-2xl font-bold tracking-widest">
 					PACKAGES

@@ -45,7 +45,7 @@ function NavBar({
 		if (elementRef && elementRef.current) {
 			resetButton();
 			buttonRef.current.style.backgroundColor = "gray";
-			elementRef.current.scrollIntoView({ behavior: "smooth" });
+			elementRef.current.scrollIntoView({ behavior: "auto" });
 		} else {
 			navigate("/");
 			resetButton();
