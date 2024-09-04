@@ -1,14 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-// import { AdventureIdContext } from "../store/AdventureIdContext";
 function Adventure({ adt }) {
-	// const { adventureId, setAdventureId } = useContext(AdventureIdContext);
 	const navigate = useNavigate();
-	// const handleSubmit = () => {
-	// 	// setAdventureId(adt.id);
-	// 	// localStorage.setItem("adventure_id", adt.id);
-	// 	navigate(`/adventure/${adt.name}/${adt.id}`);
-	// };
 	return (
 		<>
 			<div

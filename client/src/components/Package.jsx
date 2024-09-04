@@ -2,13 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 function Package({ city }) {
-	// const { selectedCity, setSelectedCity } = useContext(CityContext);
+
 	const navigate = useNavigate();
-	// const handleSelect = () => {
-	// 	// localStorage.setItem("city", city.id);
-	// 	// setSelectedCity(city.id);
-	// 	navigate(`/adventures/${city.id}`);
-	// };
 
 	return (
 		<div

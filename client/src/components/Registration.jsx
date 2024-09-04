@@ -1,28 +1,24 @@
-import React, { useEffect, useState, useContext } from "react";
-import { IsLoggedInContext } from "../store/IsLoggedInContext";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 function Registration({ advent }) {
-	const { isLoggedIn, setIsLoggedIn, authToken, setAuthToken } =
-		useContext(IsLoggedInContext);
 	const [adult, setAdult] = useState(0);
 	const [child, setChild] = useState(0);
 	const [total, setTotal] = useState(0);
 	const [name, setName] = useState("");
 	const formatDate = (date) => {
 		const year = date.getFullYear();
-		const month = String(date.getMonth() + 1).padStart(2, "0"); // Months are 0-based
+		const month = String(date.getMonth() + 1).padStart(2, "0");
 		const day = String(date.getDate()).padStart(2, "0");
 		return `${year}-${month}-${day}`;
 	};
 
-	// Initialize the state with today's date in yyyy-MM-dd format
 	let tomorrow = new Date();
 	tomorrow.setDate(tomorrow.getDate() + 1);
 	const [date, setDate] = useState(formatDate(tomorrow));
 	const price = advent.costPerHead;
 	const userId = localStorage.getItem("userId");
-
+	const authToken = localStorage.getItem("authToken");
 	const [message, setMessage] = useState("");
 
 	const reservationUrl = import.meta.env.VITE_POST_RESERVATION;
@@ -36,11 +32,11 @@ function Registration({ advent }) {
 		const payLoad = {
 			userId: userId,
 			name: name,
-			date: formatDate(new Date(date)), // Convert the date string to a Date object
+			date: formatDate(new Date(date)),
 			person: parseInt(adult) + parseInt(child),
 			adventure: advent.id,
 		};
-		if (isLoggedIn == "true") {
+		if (authToken) {
 			try {
 				const res = await axios.post(reservationUrl, payLoad, {
 					headers: {
@@ -157,7 +153,6 @@ function Registration({ advent }) {
 						<button
 							type="submit"
 							className="w-full py-2 px-4 bg-blue-500 text-white font-semibold rounded-md shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed"
-							// disabled={!loggedIn}
 						>
 							Register
 						</button>

@@ -1,21 +1,15 @@
 import React, { useEffect, useState } from "react";
 import Adventure from "./Adventure";
-// import { CityContext } from "../store/CityContext";
 import { useParams } from "react-router-dom";
 function Adventures() {
-	// const { selectedCity, setSelectedCity } = useContext(CityContext);
 	const { selectedCity } = useParams();
-	// const cityName = localStorage.getItem("city");
-	// console.log(selectedCity)
-	// console.log(selectedCity)
 	const getAdventureUrl = import.meta.env.VITE_GET_ADVENTURES + selectedCity;
-
 	const [adventureData, setAdventureData] = useState([]);
+	
 	async function fetchData() {
 		const res = await fetch(getAdventureUrl);
 		const data_1 = await res.json();
 		setAdventureData(data_1);
-		// console.log(data_1);
 		return data_1;
 	}
 

@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function NavBar({
 	homeRef,
@@ -60,13 +60,13 @@ function NavBar({
 	const handleLogout = (e) => {
 		e.preventDefault();
 		localStorage.setItem("authToken", "");
-		localStorage.setItem("userId","")
+		localStorage.setItem("userId", "");
 
 		window.location.reload();
 	};
 	const handleScroll = () => {
 		sectionRefs.forEach((sectionRef, index) => {
-			if (sectionRef.current) {
+			if (sectionRef && sectionRef.current) {
 				const { top, bottom } = sectionRef.current.getBoundingClientRect();
 				const windowHeight = window.innerHeight;
 				if ((top >= 0 && top < windowHeight / 2) || top < 64) {
@@ -146,7 +146,7 @@ function NavBar({
 			</div>
 
 			<div className=" text-white font-semibold">
-				{(!authToken || !userId) ? (
+				{!authToken || !userId ? (
 					<div className=" space-x-2 m-1 mr-6">
 						<Link to={"/signup"}>
 							<button className=" bg-gray-700 p-1 px-2 mx-2 rounded-md">

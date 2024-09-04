@@ -25,7 +25,6 @@ function Signup() {
 		} catch (error) {
 			const mes = error.response.data.message;
 			setMessage(mes);
-			console.log(message);
 		}
 	};
 	return (

@@ -1,30 +1,23 @@
-import React, {  useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Registration from "./Registration";
-// import { AdventureIdContext } from "../store/AdventureIdContext";
 import { useParams } from "react-router-dom";
-// import "./Adventures_Detail.css";
 function Adventure_Detail() {
-	// const { adventureId, setAdventureId } = useContext(AdventureIdContext);
-	const {adtId } = useParams();
-	// console.log(adtId)
+	const { adtId } = useParams();
 	const [images, setImages] = useState([""]);
 	const getAdventureDetailUrl =
 		import.meta.env.VITE_GET_ADVENTURE_DETAIL + adtId;
 	const [advent, setAdventData] = useState({});
+
 	async function fetchData() {
-		// console.log(getAdventureUrl);
 		const res = await fetch(getAdventureDetailUrl);
 		const data_1 = await res.json();
 		setAdventData(data_1);
 		setImages(data_1.images);
-		// console.log(data_1);
 		return data_1;
 	}
 
 	useEffect(() => {
 		fetchData();
-
-		// console.log(advent);
 	}, [getAdventureDetailUrl]);
 	return (
 		<div className=" ">

@@ -9,7 +9,7 @@ function Reviews() {
 	const scrollReview = (position) => {
 		if (reviewRef.current) {
 			reviewRef.current.scrollBy({
-				left: `${position}`, // Adjust the scroll amount as needed
+				left: `${position}`, 
 				behavior: "smooth",
 			});
 		}

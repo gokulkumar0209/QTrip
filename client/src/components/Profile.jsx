@@ -1,18 +1,24 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { IsLoggedInContext } from "../store/IsLoggedInContext";
+import { useNavigate } from "react-router-dom";
+
 function Profile() {
+	const navigate = useNavigate();
 	const [data, setData] = useState([]);
 	const userId = localStorage.getItem("userId");
+	const authToken = localStorage.getItem("authToken");
 	const reservUrl = import.meta.env.VITE_GET_RESERVATION + userId;
 	const deleteUrl = import.meta.env.VITE_DELETE_RESERVATION;
-	const authToken = localStorage.getItem("authToken")
+
 	useEffect(() => {
+		if (!localStorage.getItem("authToken")) {
+			navigate("/");
+		}
 		async function fetchData() {
 			try {
 				const response = await axios.get(reservUrl, {
 					headers: {
-						Authorization: `Bearer ${authToken}`, // Include auth token from local storage
+						Authorization: `Bearer ${authToken}`,
 					},
 				});
 				setData(response.data);
@@ -22,7 +28,7 @@ function Profile() {
 		}
 		fetchData();
 	}, [authToken, reservUrl]);
-	const payLoad = { userId: userId };
+
 	const handleDelete = async (e, id) => {
 		e.preventDefault();
 		try {
@@ -33,12 +39,10 @@ function Profile() {
 					Authorization: `Bearer ${authToken}`,
 					"Content-Type": "application/json",
 				},
-				data: { userId: userId }, // Include the body data
+				data: { userId: userId },
 			});
 			if (response.status === 200) {
 				e.target.style.backgroundColor = "#1f2937";
-
-				// Change the inner text to "Cancelled"
 				e.target.innerText = "Cancelled";
 			}
 		} catch (error) {
