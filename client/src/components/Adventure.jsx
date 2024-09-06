@@ -6,7 +6,7 @@ function Adventure({ adt }) {
 		<>
 			<div
 				onClick={() => navigate(`/adventure/${adt.name}/${adt.id}`)}
-				className=" m-2  rounded-md group hover:shadow-xl shadow-slate-600 "
+				className=" m-2  rounded-md group hover:shadow-xl shadow-slate-600  hover:cursor-pointer "
 			>
 				<div className=" group relative  ">
 					<div className=" flex justify-center  container h-40 w-full overflow-hidden rounded-t-md  ">
