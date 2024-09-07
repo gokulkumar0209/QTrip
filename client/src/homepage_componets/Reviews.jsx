@@ -3,6 +3,7 @@ import { reviews } from "../assets/reviews";
 import Review from "../cards/ReviewCard";
 import { useNavigate } from "react-router-dom";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
+import ReviewCard from "../cards/ReviewCard";
 function Reviews() {
 	const reviewRef = useRef(null);
 	const navigate = useNavigate();
@@ -46,12 +47,12 @@ className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-3
 					ref={reviewRef}
 					className=" overflow-x-scroll  whitespace-nowrap no-scrollbar "
 				>
-					<Review review={reviews[0]} />
-					<Review review={reviews[1]} />
-					<Review review={reviews[2]} />
-					<Review review={reviews[3]} />
-					<Review review={reviews[4]} />
-					<Review review={reviews[5]} />
+					<ReviewCard review={reviews[0]} />
+					<ReviewCard review={reviews[1]} />
+					<ReviewCard review={reviews[2]} />
+					<ReviewCard review={reviews[3]} />
+					<ReviewCard review={reviews[4]} />
+					<ReviewCard review={reviews[5]} />
 				</div>
 			</div>
 		</div>

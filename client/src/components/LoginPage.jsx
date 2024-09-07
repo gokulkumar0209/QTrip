@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { RiAccountCircleFill } from "react-icons/ri";
-function Login() {
+function LoginPage() {
 	
 	const loginUrl = import.meta.env.VITE_POST_LOGIN;
 	const [email, setEmail] = useState("");
@@ -77,4 +77,4 @@ function Login() {
 	);
 }
 
-export default Login;
+export default LoginPage;

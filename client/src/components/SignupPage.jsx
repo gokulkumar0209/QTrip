@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { RiAccountCircleFill } from "react-icons/ri";
 
-function Signup() {
+function SignupPage() {
 	const navigate = useNavigate();
 	const registerUrl = import.meta.env.VITE_POST_REGISTER;
 	const [email, setEmail] = useState("");
@@ -89,4 +89,4 @@ function Signup() {
 	);
 }
 
-export default Signup;
+export default SignupPage;

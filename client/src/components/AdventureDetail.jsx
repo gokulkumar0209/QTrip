@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Registration from "./Registration";
 import { useParams } from "react-router-dom";
-function Adventure_Detail() {
+function AdventureDetail() {
 	const { adtId } = useParams();
 	const [images, setImages] = useState([""]);
 	const getAdventureDetailUrl =
@@ -56,4 +56,4 @@ function Adventure_Detail() {
 	);
 }
 
-export default Adventure_Detail;
+export default AdventureDetail;

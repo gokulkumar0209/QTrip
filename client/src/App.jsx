@@ -3,11 +3,11 @@ import { Route, BrowserRouter, Routes } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
 import Home from "./components/HomePage";
-import Adventures from "./components/AdventuresPage";
-import Adventure_Detail from "./components/AdventureDetail";
-import Signup from "./components/SignupPage";
-import Login from "./components/LoginPage";
-import Profile from "./components/ProfilePage";
+import AdventuresPage from "./components/AdventuresPage";
+import AdventureDetail from "./components/AdventureDetail";
+import SignupPage from "./components/SignupPage";
+import LoginPage from "./components/LoginPage";
+import ProfilePage from "./components/ProfilePage";
 import ReviewPage from "./components/ReviewPage";
 
 function App() {
@@ -48,15 +48,15 @@ function App() {
 						></Route>
 						<Route
 							path="/adventures/:selectedCity"
-							element={<Adventures />}
+							element={<AdventuresPage />}
 						></Route>
 						<Route
 							path="/adventure/:adtname/:adtId"
-							element={<Adventure_Detail />}
+							element={<AdventureDetail />}
 						></Route>
-						<Route path="/signup" element={<Signup />}></Route>
-						<Route path="/login" element={<Login />}></Route>
-						<Route path="/profile" element={<Profile />}></Route>
+						<Route path="/signup" element={<SignupPage />}></Route>
+						<Route path="/login" element={<LoginPage />}></Route>
+						<Route path="/profile" element={<ProfilePage />}></Route>
 						<Route path="/reviews" element={<ReviewPage />}></Route>
 					</Routes>
 				</div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Adventure from "../cards/AdventureCard";
 import { useParams } from "react-router-dom";
-function Adventures() {
+import AdventureCard from "../cards/AdventureCard";
+function AdventuresPage() {
 	const { selectedCity } = useParams();
 	const getAdventureUrl = import.meta.env.VITE_GET_ADVENTURES + selectedCity;
 	const [adventureData, setAdventureData] = useState([]);
@@ -28,7 +28,7 @@ function Adventures() {
 					{adventureData.map((adt) => {
 						return (
 							<div className="" key={adt.id}>
-								<Adventure adt={adt} />
+								<AdventureCard adt={adt} />
 							</div>
 						);
 					})}
@@ -38,4 +38,4 @@ function Adventures() {
 	);
 }
 
-export default Adventures;
+export default AdventuresPage;
