@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Adventure from "./Adventure";
+import Adventure from "../cards/AdventureCard";
 import { useParams } from "react-router-dom";
 function Adventures() {
 	const { selectedCity } = useParams();

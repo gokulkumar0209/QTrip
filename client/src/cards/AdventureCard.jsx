@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-function Adventure({ adt }) {
+function AdventureCard({ adt }) {
 	const navigate = useNavigate();
 	return (
 		<>
@@ -36,4 +36,4 @@ function Adventure({ adt }) {
 	);
 }
 
-export default Adventure;
+export default AdventureCard;

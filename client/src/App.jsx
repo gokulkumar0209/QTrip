@@ -2,13 +2,13 @@ import { useState } from "react";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
-import Home from "./components/Home";
-import Adventures from "./components/Adventures";
+import Home from "./components/HomePage";
+import Adventures from "./components/AdventuresPage";
 import Adventure_Detail from "./components/AdventureDetail";
-import Signup from "./components/Signup";
-import Login from "./components/Login";
-import Profile from "./components/Profile";
-import Review_Detail from "./components/ReviewDetail";
+import Signup from "./components/SignupPage";
+import Login from "./components/LoginPage";
+import Profile from "./components/ProfilePage";
+import ReviewPage from "./components/ReviewPage";
 
 function App() {
 	const [homeRef, setHomeRef] = useState(null);
@@ -57,7 +57,7 @@ function App() {
 						<Route path="/signup" element={<Signup />}></Route>
 						<Route path="/login" element={<Login />}></Route>
 						<Route path="/profile" element={<Profile />}></Route>
-						<Route path="/reviews" element={<Review_Detail />}></Route>
+						<Route path="/reviews" element={<ReviewPage />}></Route>
 					</Routes>
 				</div>
 			</BrowserRouter>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-function Review({ review }) {
+function ReviewCard({ review }) {
 	const [positive, setPositive] = useState([]);
 	useEffect(() => {
 		const arr = [];
@@ -29,10 +29,12 @@ function Review({ review }) {
 			</div>
 
 			<div className="container overflow-hidden p-4">
-				<h2 className=" max-h-16 whitespace-normal text-base overflow-y-scroll">{review.rev}</h2>
+				<h2 className=" max-h-16 whitespace-normal text-base overflow-y-scroll">
+					{review.rev}
+				</h2>
 			</div>
 		</div>
 	);
 }
 
-export default Review;
+export default ReviewCard;

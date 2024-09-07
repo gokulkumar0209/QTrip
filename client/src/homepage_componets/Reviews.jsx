@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { reviews } from "../assets/reviews";
-import Review from "./Review";
+import Review from "../cards/ReviewCard";
 import { useNavigate } from "react-router-dom";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 function Reviews() {

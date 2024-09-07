@@ -1,6 +1,6 @@
 import React from "react";
 import { reviews } from "../assets/reviews";
-function Review_Detail() {
+function ReviewPage() {
 	const addStar = (rating) => {
 		const arr = [];
 		for (let i = 0; i < rating; i++) {
@@ -36,4 +36,4 @@ function Review_Detail() {
 	);
 }
 
-export default Review_Detail;
+export default ReviewPage;

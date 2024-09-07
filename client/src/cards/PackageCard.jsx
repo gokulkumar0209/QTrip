@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-function Package({ city }) {
+function PackageCard({ city }) {
 
 	const navigate = useNavigate();
 
@@ -36,4 +36,4 @@ function Package({ city }) {
 	);
 }
 
-export default Package;
+export default PackageCard;

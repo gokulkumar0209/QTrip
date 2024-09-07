@@ -1,11 +1,11 @@
 import React, { useEffect, useRef } from "react";
 
-import Services from "./Services";
-import Reviews from "./Reviews";
-import Contact from "./Contact";
-import About from "./About";
-import Packages from "./Packages";
-import FirstView from "./FirstView";
+import Services from "../homepage_componets/Services";
+import Reviews from "../homepage_componets/Reviews";
+import Contact from "../homepage_componets/Contact";
+import About from "../homepage_componets/About";
+import Packages from "../homepage_componets/Packages";
+import FirstView from "../homepage_componets/FirstView";
 
 function Home({
 	setHomeRef,

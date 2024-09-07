@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-
-import Package from "./Package";
+import PackageCard from "../cards/PackageCard";
 import axios from "axios";
 
 function Packages() {
@@ -29,7 +28,7 @@ function Packages() {
 			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  ">
 				{cities.map((city, index) => (
 					<div key={index} className=" flex justify-center">
-						<Package city={city} />
+						<PackageCard city={city} />
 					</div>
 				))}
 			</div>
